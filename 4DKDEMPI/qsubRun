@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l walltime=01:00:00
+#PBS -l nodes=1:ppn=10
+#PBS -N 4DKDE
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+module load mpich
+
+mpiexec ./4DKDE /gpfs_scratch/tsccsj/NYCTaxi/20150121All.csv /gpfs_scratch/tsccsj/NYCTaxi/200_1000_2 578200 609700 4491900 4533300 1000 1000
+
